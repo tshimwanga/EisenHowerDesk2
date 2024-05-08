@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+	minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.AddTaskController">
+	<children>
+		<AnchorPane prefHeight="410.0" prefWidth="610.0">
+			<children>
+				<AnchorPane layoutX="4.0" layoutY="7.0" prefHeight="34.0"
+					prefWidth="600.0" styleClass="left-form"
+					stylesheets="@../esthetic/connexionesthetic.css">
+					<children>
+						<Label layoutX="29.0" layoutY="5.0" prefHeight="18.0"
+							prefWidth="76.0" text="New Task" textFill="#dbd6ca" />
+						<FontAwesomeIcon fill="#dbd6ca" glyphName="TASKS"
+							layoutX="14.0" layoutY="20.0" />
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="addtaskiu" layoutX="4.0" layoutY="45.0"
+					prefHeight="370.0" prefWidth="600.0" styleClass="right-form"
+					stylesheets="@../esthetic/connexionesthetic.css"
+					AnchorPane.bottomAnchor="9.0">
+					<children>
+						<Label layoutX="142.0" layoutY="44.0" text="Task*" />
+						<Label layoutX="141.0" layoutY="91.0" text="Description" />
+						<Label layoutX="141.0" layoutY="131.0" text="Date*" />
+						<Label layoutX="141.0" layoutY="172.0" text="Time*" />
+						<Label layoutX="141.0" layoutY="208.0"
+							text="Rate of Importance*" />
+						<Label layoutX="141.0" layoutY="259.0"
+							text="Rate of Urgence*" />
+						<TextField fx:id="taskiu" layoutX="277.0" layoutY="40.0"
+							prefHeight="26.0" prefWidth="168.0"
+							promptText="Name of Task" styleClass="textfield" />
+						<TextField fx:id="descriptioniu" layoutX="277.0"
+							layoutY="87.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="What It consists of"
+							styleClass="textfield" />
+						<TextField fx:id="timeiu" layoutX="277.0"
+							layoutY="168.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="Format HH:MM please"
+							styleClass="textfield" />
+						<DatePicker fx:id="dateiu" editable="false"
+							layoutX="277.0" layoutY="126.0" prefHeight="26.0"
+							prefWidth="168.0" promptText="DeadLine"
+							styleClass="textfield" />
+						<Slider fx:id="rateimpiu" blockIncrement="1.0"
+							layoutX="277.0" layoutY="210.0" majorTickUnit="1.0"
+							max="10.0" minorTickCount="0" prefHeight="14.0"
+							prefWidth="168.0" showTickLabels="true"
+							showTickMarks="true" snapToTicks="true" />
+						<Slider fx:id="rateurgiu" blockIncrement="1.0"
+							layoutX="277.0" layoutY="252.0" majorTickUnit="1.0"
+							max="10.0" minorTickCount="0" prefHeight="14.0"
+							prefWidth="168.0" showTickLabels="true"
+							showTickMarks="true" snapToTicks="true" />
+						<Button fx:id="addcanceliu" layoutX="393.0"
+							layoutY="301.0" mnemonicParsing="false"
+							onAction="#cancelIU" styleClass="left-form"
+							stylesheets="@../esthetic/connexionesthetic.css"
+							text="Cancel" textFill="#dbd6ca" />
+						<Button fx:id="addtaskbtniu" layoutX="467.0"
+							layoutY="301.0" mnemonicParsing="false"
+							onAction="#addTaskIU" prefHeight="26.0"
+							prefWidth="51.0" styleClass="left-form"
+							stylesheets="@../esthetic/connexionesthetic.css"
+							text="Add" textFill="#dbd6ca" />
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="addtaskibnu" layoutX="-1.0" layoutY="40.0"
+					prefHeight="370.0" prefWidth="610.0" styleClass="right-form"
+					stylesheets="@../esthetic/connexionesthetic.css"
+					visible="false">
+					<children>
+						<Label layoutX="142.0" layoutY="44.0" text="Task*" />
+						<Label layoutX="141.0" layoutY="91.0" text="Description" />
+						<Label layoutX="141.0" layoutY="131.0" text="Date*" />
+						<Label layoutX="141.0" layoutY="172.0" text="Time*" />
+						<Label layoutX="141.0" layoutY="208.0"
+							text="Rate of Importance*" />
+						<Label layoutX="141.0" layoutY="259.0"
+							text="Rate of Urgence*" />
+						<TextField fx:id="taskibnu" layoutX="277.0"
+							layoutY="40.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="Name of Task" styleClass="textfield" />
+						<TextField fx:id="descriptionibnu" layoutX="277.0"
+							layoutY="87.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="What It consists of"
+							styleClass="textfield" />
+						<TextField fx:id="timeibnu" layoutX="277.0"
+							layoutY="168.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="Format HH:MM please"
+							styleClass="textfield" />
+						<DatePicker fx:id="dateibnu" editable="false"
+							layoutX="277.0" layoutY="126.0" prefHeight="26.0"
+							prefWidth="168.0" promptText="DeadLine"
+							styleClass="textfield" />
+						<Slider fx:id="rateimpibnu" blockIncrement="1.0"
+							layoutX="277.0" layoutY="210.0" majorTickUnit="1.0"
+							max="10.0" minorTickCount="0" prefHeight="14.0"
+							prefWidth="168.0" showTickLabels="true"
+							showTickMarks="true" snapToTicks="true" />
+						<Slider fx:id="rateurgibnu" blockIncrement="1.0"
+							layoutX="277.0" layoutY="252.0" majorTickUnit="1.0"
+							max="10.0" minorTickCount="0" prefHeight="14.0"
+							prefWidth="168.0" showTickLabels="true"
+							showTickMarks="true" snapToTicks="true" />
+						<Button fx:id="addcancelibnu" layoutX="393.0"
+							layoutY="301.0" mnemonicParsing="false"
+							onAction="#cancelIBNU" styleClass="left-form"
+							stylesheets="@../esthetic/connexionesthetic.css"
+							text="Cancel" textFill="#dbd6ca" />
+						<Button fx:id="addtaskbtnibnu" layoutX="467.0"
+							layoutY="301.0" mnemonicParsing="false"
+							onAction="#addTaskIBNU" prefHeight="26.0"
+							prefWidth="51.0" styleClass="left-form"
+							stylesheets="@../esthetic/connexionesthetic.css"
+							text="Add" textFill="#dbd6ca" />
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="addtasknibu" layoutX="4.0" layoutY="41.0"
+					prefHeight="370.0" prefWidth="600.0" styleClass="right-form"
+					stylesheets="@../esthetic/connexionesthetic.css"
+					visible="false">
+					<children>
+						<Label layoutX="142.0" layoutY="44.0" text="Task*" />
+						<Label layoutX="141.0" layoutY="91.0" text="Description" />
+						<Label layoutX="141.0" layoutY="131.0" text="Date*" />
+						<Label layoutX="141.0" layoutY="172.0" text="Time*" />
+						<Label layoutX="141.0" layoutY="208.0"
+							text="Rate of Importance*" />
+						<Label layoutX="141.0" layoutY="259.0"
+							text="Rate of Urgence*" />
+						<TextField fx:id="tasknibu" layoutX="277.0"
+							layoutY="40.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="Name of Task" styleClass="textfield" />
+						<TextField fx:id="descriptionnibu" layoutX="277.0"
+							layoutY="87.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="What It consists of"
+							styleClass="textfield" />
+						<TextField fx:id="timenibu" layoutX="277.0"
+							layoutY="168.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="Format HH:MM please"
+							styleClass="textfield" />
+						<DatePicker fx:id="datenibu" editable="false"
+							layoutX="277.0" layoutY="126.0" prefHeight="26.0"
+							prefWidth="168.0" promptText="DeadLine"
+							styleClass="textfield" />
+						<Slider fx:id="rateimpnibu" blockIncrement="1.0"
+							layoutX="277.0" layoutY="205.0" majorTickUnit="1.0"
+							max="10.0" minorTickCount="0" prefHeight="42.0"
+							prefWidth="161.0" showTickLabels="true"
+							showTickMarks="true" snapToTicks="true" />
+						<Slider fx:id="rateurgnibu" layoutX="277.0"
+							layoutY="256.0" majorTickUnit="1.0" max="10.0"
+							minorTickCount="0" prefHeight="42.0"
+							prefWidth="168.0" showTickLabels="true"
+							showTickMarks="true" snapToTicks="true" />
+						<Button fx:id="addcancelnibu" layoutX="393.0"
+							layoutY="314.0" mnemonicParsing="false"
+							onAction="#cancelNIBU" styleClass="left-form"
+							stylesheets="@../esthetic/connexionesthetic.css"
+							text="Cancel" textFill="#dbd6ca" />
+						<Button fx:id="addtaskbtnnibu" layoutX="480.0"
+							layoutY="314.0" mnemonicParsing="false"
+							onAction="#addTaskNIBU" prefHeight="26.0"
+							prefWidth="51.0" styleClass="left-form"
+							stylesheets="@../esthetic/connexionesthetic.css"
+							text="Add" textFill="#dbd6ca" />
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="addtasknianu" layoutX="-1.0" layoutY="37.0"
+					prefHeight="378.0" prefWidth="610.0" styleClass="right-form"
+					stylesheets="@../esthetic/connexionesthetic.css"
+					visible="false">
+					<children>
+						<Label layoutX="142.0" layoutY="44.0" text="Task*" />
+						<Label layoutX="141.0" layoutY="91.0" text="Description" />
+						<Label layoutX="141.0" layoutY="131.0" text="Date*" />
+						<Label layoutX="141.0" layoutY="172.0" text="Time*" />
+						<Label layoutX="141.0" layoutY="208.0"
+							text="Rate of Importance*" />
+						<Label layoutX="141.0" layoutY="259.0"
+							text="Rate of Urgence*" />
+						<TextField fx:id="tasknianu" layoutX="277.0"
+							layoutY="40.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="Name of Task" styleClass="textfield" />
+						<TextField fx:id="descriptionnianu" layoutX="277.0"
+							layoutY="87.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="What It consists of"
+							styleClass="textfield" />
+						<TextField fx:id="timenianu" layoutX="277.0"
+							layoutY="168.0" prefHeight="26.0" prefWidth="168.0"
+							promptText="Format HH:MM please"
+							styleClass="textfield" />
+						<DatePicker fx:id="datenianu" editable="false"
+							layoutX="277.0" layoutY="126.0" prefHeight="26.0"
+							prefWidth="168.0" promptText="DeadLine"
+							styleClass="textfield" />
+						<Slider fx:id="rateimpnianu" blockIncrement="1.0"
+							layoutX="277.0" layoutY="210.0" majorTickUnit="1.0"
+							max="10.0" minorTickCount="0" prefHeight="14.0"
+							prefWidth="168.0" showTickLabels="true"
+							showTickMarks="true" snapToTicks="true" />
+						<Slider fx:id="rateurgnianu" blockIncrement="1.0"
+							layoutX="277.0" layoutY="252.0" majorTickUnit="1.0"
+							max="10.0" minorTickCount="0" prefHeight="14.0"
+							prefWidth="168.0" showTickLabels="true"
+							showTickMarks="true" snapToTicks="true" />
+						<Button fx:id="addcancelnianu" layoutX="393.0"
+							layoutY="301.0" mnemonicParsing="false"
+							onAction="#cancelNIANU" styleClass="left-form"
+							stylesheets="@../esthetic/connexionesthetic.css"
+							text="Cancel" textFill="#dbd6ca" />
+						<Button fx:id="addtaskbtnnianu" layoutX="467.0"
+							layoutY="301.0" mnemonicParsing="false"
+							onAction="#addTaskNIANU" prefHeight="26.0"
+							prefWidth="51.0" styleClass="left-form"
+							stylesheets="@../esthetic/connexionesthetic.css"
+							text="Add" textFill="#dbd6ca" />
+					</children>
+				</AnchorPane>
+			</children>
+		</AnchorPane>
+	</children>
+</StackPane>

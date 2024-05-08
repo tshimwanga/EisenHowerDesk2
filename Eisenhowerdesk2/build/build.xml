@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Eisenhowerdesk2" default="do-deploy" basedir="."
+	xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<target name="init-fx-tasks">
+		<path id="fxant">
+			<filelist>
+				<file name="${java.home}\..\lib\ant-javafx.jar" />
+				<file name="${java.home}\lib\jfxrt.jar" />
+			</filelist>
+		</path>
+
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+			uri="javafx:com.sun.javafx.tools.ant"
+			classpathref="fxant" />
+	</target>
+	<target name="setup-staging-area">
+		<delete dir="externalLibs" />
+		<delete dir="project" />
+		<delete dir="projectRefs" />
+
+		<mkdir dir="externalLibs" />
+
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-platform-runner_1.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib">
+				<filename name="javafx.fxml.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-jupiter-params_5.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib">
+				<filename name="javafx-swt.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-platform-suite-api_1.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib">
+				<filename name="javafx.swing.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib">
+				<filename name="javafx.base.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-platform-launcher_1.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-platform-suite-engine_1.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-jupiter-api_5.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\Downloads">
+				<filename name="testfx-core-4.0.0-20150226.214553-8.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="org.hamcrest.core_2.2.0.v20230809-1000.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-jupiter-migrationsupport_5.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-vintage-engine_5.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="org.opentest4j_1.3.0.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-platform-engine_1.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-platform-commons_1.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="org.hamcrest_2.2.0.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\Downloads\jar_files">
+				<filename name="mockito-core-5.11.0.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="org.junit_4.13.2.v20230809-1000.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-platform-suite-commons_1.10.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\mysql-connector-j-8.3.0\mysql-connector-j-8.3.0">
+				<filename name="mysql-connector-j-8.3.0.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib">
+				<filename name="javafx.graphics.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="org.apiguardian.api_1.1.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\Downloads\ojdbc14-10.2.0.2.0.jar">
+				<filename name="ojdbc14-10.2.0.2.0.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\Downloads\jar_files">
+				<filename name="fontawesomefx-8.2.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib">
+				<filename name="javafx.media.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib">
+				<filename name="javafx.web.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset
+				dir="C:\Users\ngong\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib">
+				<filename name="javafx.controls.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\ngong\.p2\pool\plugins">
+				<filename name="junit-jupiter-engine_5.10.2.jar" />
+			</fileset>
+		</copy>
+
+		<mkdir dir="project" />
+		<copy todir="project">
+			<fileset dir="C:\Users\ngong\eclipse-workspace\Eisenhowerdesk2">
+				<include name="src/**" />
+			</fileset>
+		</copy>
+
+		<mkdir dir="projectRefs" />
+	</target>
+	<target name='do-compile'>
+		<delete dir="build" />
+		<mkdir dir="build/src" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build/classes" />
+
+		<!-- Copy project-libs references -->
+		<copy todir="build/libs">
+			<fileset dir="externalLibs">
+				<include name="javafx-swt.jar" />
+				<include name="javafx.fxml.jar" />
+				<include name="org.hamcrest_2.2.0.jar" />
+				<include name="org.junit_4.13.2.v20230809-1000.jar" />
+				<include name="junit-jupiter-migrationsupport_5.10.2.jar" />
+				<include name="javafx.media.jar" />
+				<include name="javafx.controls.jar" />
+				<include name="junit-jupiter-params_5.10.2.jar" />
+				<include name="javafx.swing.jar" />
+				<include name="javafx.graphics.jar" />
+				<include name="junit-vintage-engine_5.10.2.jar" />
+				<include name="junit-jupiter-api_5.10.2.jar" />
+				<include name="mockito-core-5.11.0.jar" />
+				<include name="junit-platform-suite-commons_1.10.2.jar" />
+				<include name="junit-platform-suite-engine_1.10.2.jar" />
+				<include name="org.apiguardian.api_1.1.2.jar" />
+				<include name="mysql-connector-j-8.3.0.jar" />
+				<include name="junit-platform-commons_1.10.2.jar" />
+				<include name="junit-platform-suite-api_1.10.2.jar" />
+				<include name="javafx.web.jar" />
+				<include name="org.opentest4j_1.3.0.jar" />
+				<include name="junit-platform-runner_1.10.2.jar" />
+				<include name="org.hamcrest.core_2.2.0.v20230809-1000.jar" />
+				<include name="ojdbc14-10.2.0.2.0.jar" />
+				<include name="testfx-core-4.0.0-20150226.214553-8.jar" />
+				<include name="junit-platform-engine_1.10.2.jar" />
+				<include name="javafx.base.jar" />
+				<include name="fontawesomefx-8.2.jar" />
+				<include name="junit-platform-launcher_1.10.2.jar" />
+				<include name="junit-jupiter-engine_5.10.2.jar" />
+			</fileset>
+		</copy>
+
+		<!-- Copy project references -->
+
+		<!-- Copy project sources itself -->
+		<copy todir="build/src">
+			<fileset dir="project/src">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<javac includeantruntime="false" source="20" target="20"
+			srcdir="build/src" destdir="build/classes" encoding="UTF-8">
+			<classpath>
+				<fileset dir="build/libs">
+					<include name="*" />
+				</fileset>
+			</classpath>
+		</javac>
+
+		<!-- Copy over none Java-Files -->
+		<copy todir="build/classes">
+			<fileset dir="project/src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+
+
+	</target>
+	<target name="do-deploy"
+		depends="setup-staging-area, do-compile, init-fx-tasks">
+		<delete file="dist" />
+		<delete file="deploy" />
+
+		<mkdir dir="dist" />
+		<mkdir dir="dist/libs" />
+
+		<copy todir="dist/libs">
+			<fileset dir="externalLibs">
+				<include name="*" />
+			</fileset>
+		</copy>
+
+
+		<fx:resources id="appRes">
+			<fx:fileset dir="dist" includes="Eisenhowerdesk2.jar" />
+			<fx:fileset dir="dist" includes="libs/*" />
+		</fx:resources>
+
+		<fx:application id="fxApplication"
+			name=""
+			mainClass=""
+		/>
+
+		<mkdir dir="build/classes/META-INF" />
+
+
+		<fx:jar destfile="dist/Eisenhowerdesk2.jar">
+			<fx:application refid="fxApplication" />
+			<fileset dir="build/classes">
+			</fileset>
+			<fx:resources refid="appRes" />
+
+			<manifest>
+				<attribute name="Implementation-Vendor" value="" />
+				<attribute name="Implementation-Title" value="" />
+				<attribute name="Implementation-Version" value="" />
+				<attribute name="JavaFX-Feature-Proxy" value="None" />
+			</manifest>
+		</fx:jar>
+
+
+	</target>
+</project>
